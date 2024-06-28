@@ -110,6 +110,7 @@ if tipo_entrega != 'Todos':
         conteo_con_1
 
     with col2:
+        st.title('Porcentaje que usan la app')
         st.plotly_chart(fig)
 
     with col3:
@@ -158,6 +159,7 @@ else:
         conteo_con_1
 
     with col2:
+        st.title('Porcentaje que usan la app')
         st.plotly_chart(fig)
 
     with col3:

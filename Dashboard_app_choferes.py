@@ -106,15 +106,15 @@ if tipo_entrega != 'Todos':
 
     col1, col2, col3=st.columns(3)
     with col1:
-        st.title('Choferes que usan la app')
+        st.markdown("<h1 style='color: green;'>Choferes que usan la app</h1>", unsafe_allow_html=True)
         conteo_con_1
 
     with col2:
-        st.title('Porcentaje que usan la app')
+        st.markdown("<h1>Porcentaje que usan la app</h1>", unsafe_allow_html=True)
         st.plotly_chart(fig)
 
     with col3:
-        st.title('Choferes que no usan la app')
+        st.markdown("<h1 style='color: red;'>Choferes que no usan la app</h1>", unsafe_allow_html=True)
         conteo_con_0
 
 else:
@@ -155,15 +155,15 @@ else:
     
     col1, col2, col3=st.columns(3)
     with col1:
-        st.title('Choferes que usan la app')
+        st.markdown("<h1 style='color: green;'>Choferes que usan la app</h1>", unsafe_allow_html=True)
         conteo_con_1
 
     with col2:
-        st.title('Porcentaje que usan la app')
+        st.markdown("<h1>Porcentaje que usan la app</h1>", unsafe_allow_html=True)
         st.plotly_chart(fig)
 
     with col3:
-        st.title('Choferes que no usan la app')
+        st.markdown("<h1 style='color: red;'>Choferes que no usan la app</h1>", unsafe_allow_html=True)
         conteo_con_0
 
 

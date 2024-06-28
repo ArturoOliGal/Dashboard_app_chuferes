@@ -91,21 +91,31 @@ if tipo_entrega != 'Todos':
                     'line': {'color': color_threshold, 'width': 4},
                     'thickness': 0.75,
                     'value': 90}}))
-    st.plotly_chart(fig)
+    #st.plotly_chart(fig)
     df_con_1 = filtered_df[filtered_df['Uso_app'] == 1]
     df_con_0 = filtered_df[filtered_df['Uso_app'] == 0]
 
     conteo_con_1 = df_con_1['OPERADOR LOCAL'].value_counts().reset_index()
     df_con_1=df_con_1.drop_duplicates()
     conteo_con_1.columns = ['Nombre', 'Conteo_1']
-    st.title('Choferes que usan la app')
-    conteo_con_1
 
     conteo_con_0 = df_con_0['OPERADOR LOCAL'].value_counts().reset_index()
     df_con_0=df_con_0.drop_duplicates()
     conteo_con_0.columns = ['Nombre', 'Conteo_0']
-    st.title('Choferes que no usan la app')
-    conteo_con_0
+    
+
+    col1, coli2, col3=st.columns(3)
+    with col1:
+        st.title('Choferes que usan la app')
+        conteo_con_1
+
+    with col2:
+        st.plotly_chart(fig)
+
+    with col3:
+        st.title('Choferes que no usan la app')
+        conteo_con_0
+
 else:
     
     Uso_de_la_app=filtered_DB['Uso_app'].sum()
@@ -129,21 +139,28 @@ else:
                     'line': {'color': color_threshold, 'width': 4},
                     'thickness': 0.75,
                     'value': 90}}))
-    st.plotly_chart(fig)
+    #st.plotly_chart(fig)
     df_con_1 = filtered_DB[filtered_DB['Uso_app'] == 1]
     df_con_0 = filtered_DB[filtered_DB['Uso_app'] == 0]
 
     conteo_con_1 = df_con_1['OPERADOR LOCAL'].value_counts().reset_index()
     df_con_1=df_con_1.drop_duplicates()
     conteo_con_1.columns = ['Nombre', 'Conteo_1']
-    st.title('Choferes que usan la app')
-    conteo_con_1
+
 
     conteo_con_0 = df_con_0['OPERADOR LOCAL'].value_counts().reset_index()
     df_con_0=df_con_0.drop_duplicates()
     conteo_con_0.columns = ['Nombre', 'Conteo_0']
-    st.title('Choferes que no usan la app')
-    conteo_con_0
 
+    with col1:
+        st.title('Choferes que usan la app')
+        conteo_con_1
+
+    with col2:
+        st.plotly_chart(fig)
+
+    with col3:
+        st.title('Choferes que no usan la app')
+        conteo_con_0
 
 

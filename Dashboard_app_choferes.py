@@ -151,7 +151,8 @@ else:
     conteo_con_0 = df_con_0['OPERADOR LOCAL'].value_counts().reset_index()
     df_con_0=df_con_0.drop_duplicates()
     conteo_con_0.columns = ['Nombre', 'Conteo_0']
-
+    
+    col1, coli2, col3=st.columns(3)
     with col1:
         st.title('Choferes que usan la app')
         conteo_con_1

@@ -137,7 +137,7 @@ else:
                     {'range': [0, 50], 'color': color_gray},
                     {'range': [50, 100], 'color': color_gray}],
                 'threshold': {
-                    'line': {'color': color_threshold, 'width': 4},
+                    'line': {'color': color_gray, 'width': 4},
                     'thickness': 0.75,
                     'value': 90}}))
     #st.plotly_chart(fig)

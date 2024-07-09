@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 #streamlit run Dashboard_app_choferes.py
 
-
+st.set_page_config(layout='wide')
 st.title('Dashboard app choferes')
 st.markdown('Dashboard para el siguimiento del proyecto **App choferes**')
 st.sidebar.header('Filtros de los dashboards')

@@ -107,16 +107,16 @@ if tipo_entrega != 'Todos':
     conteo_con_0.columns = ['Nombre', 'Conteo_0']
     
 
-    col1, col2, col3=st.columns(3)
-    with col1:
+    column1, column2, column3=st.columns(3)
+    with column1:
         st.markdown("<h1 style='color: green;'>Choferes que usan la app</h1>", unsafe_allow_html=True)
         conteo_con_1
 
-    with col2:
+    with column2:
         st.markdown("<h1>Porcentaje que usan la app</h1>", unsafe_allow_html=True)
         st.plotly_chart(fig)
 
-    with col3:
+    with column3:
         st.markdown("<h1 style='color: red;'>Choferes que no usan la app</h1>", unsafe_allow_html=True)
         conteo_con_0
 else:
@@ -310,8 +310,8 @@ for nombre, group in df_suma_semanal.groupby('OPERADOR LOCAL'):
 
 #Grupos
 #filtered_DB
-    with col3:
-        st.markdown("<h1 style='color: red;'>Choferes que no usan la app</h1>", unsafe_allow_html=True)
-        conteo_con_0
+    #with col3:
+        #st.markdown("<h1 style='color: red;'>Choferes que no usan la app</h1>", unsafe_allow_html=True)
+        #conteo_con_0
 
 

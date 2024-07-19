@@ -67,7 +67,7 @@ filtered_DB = DBchoferes[(DBchoferes['Fecha de entrega'] >= pd.to_datetime(Start
 
 
 filtered_DB['Uso_app'] = 0
-filtered_DB.loc[filtered_DB['Tiempo total'] > 0, 'Uso_app'] = 1
+filtered_DB.loc[filtered_DB['Tiempo total'] > 4, 'Uso_app'] = 1
 #filtered_DB
 
 if tipo_entrega != 'Todos':

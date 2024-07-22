@@ -302,6 +302,14 @@ for nombre, group in df_suma_semanal.groupby('OPERADOR LOCAL'):
 
     col2.pyplot(fig)
 
+
+
+choferes_faltantes = df[~df['OPERADOR LOCAL'].isin(DBchoferes['Nombre del chofer'])]
+choferes_faltantes=choferes_faltantes.reset_index()
+
+
+choferes_faltantes
+
 #df_agrupado
 
 

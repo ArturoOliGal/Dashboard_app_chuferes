@@ -9,7 +9,6 @@ from scipy.stats import pearsonr
 #streamlit run Dashboard_app_choferes.py
 st.set_page_config(layout='wide')
 
-
 st.title('Dashboard app choferes')
 st.markdown('Dashboard para el siguimiento del proyecto **App choferes**')
 st.sidebar.header('Filtros de los dashboards')
@@ -63,12 +62,12 @@ Fecha_min=DBchoferes['Fecha de entrega'].min().date()
 Fecha_max=DBchoferes['Fecha de entrega'].max().date()
 Start_date = st.sidebar.date_input('Fecha de inicio', value=Fecha_min, min_value=Fecha_min, max_value=Fecha_max)
 End_date = st.sidebar.date_input('Fecha de fin', value=Fecha_max, min_value=Fecha_min, max_value=Fecha_max)
-tipo_entrega = st.sidebar.selectbox('Tipo de entrega', ['Todos', 'local', 'Foraneo'])
+tipo_entrega = st.sidebar.selectbox('Tipo de entrega', ['Todos', 'LOCAL', 'FORANEO'])
 filtered_DB = DBchoferes[(DBchoferes['Fecha de entrega'] >= pd.to_datetime(Start_date)) & (DBchoferes['Fecha de entrega'] <= pd.to_datetime(End_date))]
 
 
 filtered_DB['Uso_app'] = 0
-filtered_DB.loc[filtered_DB['Tiempo total'] > 4, 'Uso_app'] = 1
+filtered_DB.loc[filtered_DB['Tiempo total'] > 0, 'Uso_app'] = 1
 #filtered_DB
 
 if tipo_entrega != 'Todos':
@@ -108,16 +107,16 @@ if tipo_entrega != 'Todos':
     conteo_con_0.columns = ['Nombre', 'Conteo_0']
     
 
-    column1, column2, column3=st.columns(3)
-    with column1:
+    col1, col2, col3=st.columns(3)
+    with col1:
         st.markdown("<h1 style='color: green;'>Choferes que usan la app</h1>", unsafe_allow_html=True)
         conteo_con_1
 
-    with column2:
+    with col2:
         st.markdown("<h1>Porcentaje que usan la app</h1>", unsafe_allow_html=True)
         st.plotly_chart(fig)
 
-    with column3:
+    with col3:
         st.markdown("<h1 style='color: red;'>Choferes que no usan la app</h1>", unsafe_allow_html=True)
         conteo_con_0
 else:
@@ -156,16 +155,16 @@ else:
     df_con_0=df_con_0.drop_duplicates()
     conteo_con_0.columns = ['Nombre', 'Conteo_0']
     
-    column1, column2, column3=st.columns(3)
-    with column1:
+    col1, col2, col3=st.columns(3)
+    with col1:
         st.markdown("<h1 style='color: green;'>Choferes que usan la app</h1>", unsafe_allow_html=True)
         conteo_con_1
 
-    with column2:
+    with col2:
         st.markdown("<h1>Porcentaje que usan la app</h1>", unsafe_allow_html=True)
         st.plotly_chart(fig)
 
-    with column3:
+    with col3:
         st.markdown("<h1 style='color: red;'>Choferes que no usan la app</h1>", unsafe_allow_html=True)
         conteo_con_0
 
